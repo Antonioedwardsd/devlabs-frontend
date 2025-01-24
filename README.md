@@ -1,40 +1,134 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+# Todo Management Application - Frontend
 
-## Getting Started
+Este repositorio contiene el frontend de una aplicación para la gestión de tareas, construido con Next.js, TypeScript y Styled Components. La aplicación permite a los usuarios autenticados visualizar, crear, editar y eliminar tareas con una interfaz interactiva y moderna.
 
-First, run the development server:
+## Tabla de Contenidos
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- [Características](#características)
+- [Tecnologías Utilizadas](#tecnologías-utilizadas)
+- [Requisitos Previos](#requisitos-previos)
+- [Configuración](#configuración)
+- [Estructura del Proyecto](#estructura-del-proyecto)
+- [Comandos Disponibles](#comandos-disponibles)
+- [Testing](#testing)
+
+---
+
+## Características
+
+- **Interfaz de Usuario Amigable:** Diseño intuitivo y atractivo con Styled Components.
+- **CRUD de Tareas:** Crear, obtener, actualizar y eliminar tareas con sincronización al backend.
+- **Autenticación:** Integración con Auth0 para gestionar usuarios.
+- **Gestor de Estado Global:** Implementado con Redux Toolkit.
+- **Testing:** Pruebas unitarias configuradas.
+
+---
+
+## Tecnologías Utilizadas
+
+- **Next.js**
+- **React**
+- **TypeScript**
+- **Styled Components**
+- **Auth0 para autenticación**
+- **Redux Toolkit para gestión del estado**
+
+---
+
+## Requisitos Previos
+
+Asegúrate de tener instalados los siguientes programas:
+
+- [Node.js](https://nodejs.org/) (versión recomendada: >= 18)
+- [Yarn](https://yarnpkg.com/) o [npm](https://www.npmjs.com/)
+
+---
+
+## Configuración
+
+1. Clona el repositorio:
+
+   ```bash
+   git clone https://github.com/Antonioedwardsd/devlabs-frontend
+   cd proyecto-frontend
+   ```
+
+2. Instala las dependencias:
+
+   ```bash
+   npm install
+   ```
+
+3. Configura las variables de entorno. Crea un archivo `.env.local` en la raíz del proyecto basado en el siguiente ejemplo:
+
+   ```env
+   NEXT_PUBLIC_AUTH0_CLIENT_ID=tu_auth0_client_id
+   NEXT_PUBLIC_AUTH0_API_AUDIENCE=tu_auth0_api_audience
+   NEXT_PUBLIC_AUTH0_ISSUER=tu_auth0_issuer
+   NEXT_PUBLIC_AUTH0_BASE_URL=http://localhost:3000
+   NEXT_PUBLIC_AUTH0_CLIENT_SECRET=tu_auth0_client_secret
+   ```
+
+4. Inicia la aplicación en modo desarrollo:
+
+   ```bash
+   npm run dev
+   ```
+
+5. Accede a la aplicación en `http://localhost:3000`.
+
+---
+
+## Estructura del Proyecto
+
+```plaintext
+frontend/
+├── src/
+│   ├── components/          # Componentes reutilizables
+│   ├── pages/               # Páginas principales de la aplicación
+│   │   ├── api/             # Rutas API para la integración con el backend
+│   │   ├── auth/            # Autenticación con Auth0
+│   │   └── index.tsx        # Página principal
+│   ├── redux/               # Configuración de Redux Toolkit
+│   ├── services/            # Servicios para llamadas a la API
+│   ├── styles/              # Archivos de estilos globales
+│   ├── utils/               # Utilidades varias
+│   └── interfaces.ts        # Tipos e interfaces
+├── .env.local               # Variables de entorno
+├── next.config.js           # Configuración de Next.js
+├── package.json             # Dependencias y scripts
+├── tsconfig.json            # Configuración de TypeScript
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+## Comandos Disponibles
 
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+- **Desarrollo:**
+  ```bash
+  npm run dev
+  ```
+- **Construcción para Producción:**
+  ```bash
+  npm run build
+  ```
+- **Inicio en Producción:**
+  ```bash
+  npm run start
+  ```
+- **Linter:**
+  ```bash
+  npm run lint
+  ```
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Testing
 
-## Learn More
+Para ejecutar las pruebas unitarias:
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+npm test
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
+---
